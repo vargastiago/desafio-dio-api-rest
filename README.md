@@ -32,26 +32,29 @@ classDiagram
         -Long id
         -String name
         -String phoneNumber
+        -Plan plan
+        -CallRecord[] callRecords
+        -Payment[] payments
     }
 
     class Plan {
         -Long id
         -String name
         -BigDecimal monthlyCost
-        -BigDecimal dataLimit
+        -Integer minutesIncluded
     }
 
     class CallRecord {
         -Long id
+        -LocalDateTime callDateTime
+        -Integer duration
         -String destinationNumber
-        -Duration duration
-        -BigDecimal cost
     }
 
     class Payment {
         -Long id
-        -BigDecimal amount
         -LocalDate paymentDate
+        -BigDecimal amount
     }
 
     %% Relações entre classes
